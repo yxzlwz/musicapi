@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='musicapi',
-    version='0.1',
+    version='0.2',
     description='QQ音乐和网易云音乐非会员歌曲的直链获取',
     url="https://github.com/Danny-Yxzl/musicapi",
     author="Yixiangzhilv",

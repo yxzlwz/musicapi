@@ -71,7 +71,7 @@ def get_by_id(id):
                  "encSecKey": encSecKey
              })
 
-    return r.json()["data"][0]["url"]
+    return r.json()["data"][0]["url"] or None
 
 
 def get_by_name(name):
