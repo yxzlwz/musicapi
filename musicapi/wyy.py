@@ -62,8 +62,8 @@ def rsaEncrypt(text, pubKey, modulus):
 
 
 def get_by_id(id):
-    if id_cache.get(id):
-        return id_cache[id]
+    # if id_cache.get(id):
+    #     return id_cache[id]
     text = json.dumps({"ids": [id], "br": 999000, "csrf_token": ''})
     secKey = random_str(16).encode()
     encText = aesEncrypt(aesEncrypt(text.encode(), NONCE), secKey)
@@ -82,8 +82,8 @@ def get_by_id(id):
 
 
 def get_by_name(name):
-    if name_cache.get(name):
-        return name_cache[name]
+    # if name_cache.get(name):
+    #     return name_cache[name]
     text = '{"s":"%s","type":"1","limit":1,"offset":0}' % name
     secKey = random_str(16).encode()
     encText = aesEncrypt(aesEncrypt(text.encode(), NONCE), secKey)

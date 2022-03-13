@@ -10,8 +10,8 @@ name_cache = {}
 
 
 def get_by_id(id):
-    if id_cache.get(id):
-        return id_cache[id]
+    # if id_cache.get(id):
+    #     return id_cache[id]
     r = post(
         "http://u.y.qq.com/cgi-bin/musicu.fcg?_=1587960702731",
         headers={
@@ -31,8 +31,8 @@ def get_by_id(id):
 
 
 def get_by_name(name):
-    if name_cache.get(name):
-        return name_cache[name]
+    # if name_cache.get(name):
+    #     return name_cache[name]
     r = get(
         f"https://c.y.qq.com/soso/fcgi-bin/client_search_cp?w={name}&n=10&p=1&aggr=1&lossless=0&cr=1&t=0"
     )
