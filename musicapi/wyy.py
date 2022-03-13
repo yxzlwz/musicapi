@@ -7,6 +7,9 @@ from requests import *
 
 ua = UserAgent()
 
+id_cache = {}
+name_cache = {}
+
 # 加密相关
 
 import base64
@@ -59,6 +62,8 @@ def rsaEncrypt(text, pubKey, modulus):
 
 
 def get_by_id(id):
+    if id_cache.get(id):
+        return id_cache[id]
     text = json.dumps({"ids": [id], "br": 999000, "csrf_token": ''})
     secKey = random_str(16).encode()
     encText = aesEncrypt(aesEncrypt(text.encode(), NONCE), secKey)
@@ -70,11 +75,15 @@ def get_by_id(id):
                  "params": encText,
                  "encSecKey": encSecKey
              })
-
-    return r.json()["data"][0]["url"] or None
+    if r.json()["data"][0]["url"]:
+        id_cache[id] = r.json()["data"][0]["url"]
+        return id_cache[id]
+    return None
 
 
 def get_by_name(name):
+    if name_cache.get(name):
+        return name_cache[name]
     text = '{"s":"%s","type":"1","limit":1,"offset":0}' % name
     secKey = random_str(16).encode()
     encText = aesEncrypt(aesEncrypt(text.encode(), NONCE), secKey)
@@ -88,5 +97,6 @@ def get_by_name(name):
     for i in r.json()["result"]["songs"]:
         url = get_by_id(i["id"])
         if url:
+            name_cache[name] = url
             return url
     return None
