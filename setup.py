@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='musicapi',
-    version='0.3.2',
+    version='0.3.3',
     description='QQ音乐和网易云音乐非会员歌曲的直链获取',
     url="https://github.com/Danny-Yxzl/musicapi",
     author="Yixiangzhilv",
@@ -18,7 +18,7 @@ setup(
         "Programming Language :: Python :: 3.10"
     ],
     keywords="music qq wyy",
-    install_requires=["requests", "fake_useragent", "pycrypto"],
+    install_requires=["requests", "fake_useragent", "pycryptodome", "Crypto"],
     packages=["musicapi"],
     project_urls={
         "Bug Reports": "https://github.com/Danny-Yxzl/musicapi/issues",
