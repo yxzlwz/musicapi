@@ -1,21 +1,18 @@
 import json
 
-from fake_useragent import UserAgent
 from requests import *
 
-ua = UserAgent()
+ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.3987.132 Safari/537.36'
 
 id_cache = {}
 name_cache = {}
 
 
 def get_by_id(id):
-    # if id_cache.get(id):
-    #     return id_cache[id]
     r = post(
         "http://u.y.qq.com/cgi-bin/musicu.fcg?_=1587960702731",
         headers={
-            "User-Agent": ua.random,
+            "User-Agent": ua,
             "Content-Type": "text/plain;charset=UTF-8",
             "Connection": "close",
         },

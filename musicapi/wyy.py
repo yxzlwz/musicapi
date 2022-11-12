@@ -2,10 +2,9 @@ import json
 import random
 import time
 
-from fake_useragent import UserAgent
 from requests import *
 
-ua = UserAgent()
+ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.3987.132 Safari/537.36"
 
 id_cache = {}
 name_cache = {}
@@ -35,7 +34,7 @@ headers = {
     'Referer': 'https://music.163.com',
     "Accept": "*/*",
     "Accept-Language": "zh-CN,zh;q=0.8,gl;q=0.6,zh-TW;q=0.4",
-    "User-Agent": ua.random,
+    "User-Agent": ua,
     "Cookie":
     f"JSESSIONID-WYYY={random_str(176)}:{int(time.time()*1000)}; _iuqxldmzr_=32; _ntes_nnid={nnid},{int(time.time()*1000)}; _ntes_nuid={nnid};",
     "Connection": "keep-alive",
