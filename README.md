@@ -56,4 +56,4 @@ The search result depend on algorithms at the official website, so it is able to
 
 ## Contact
 
-[mail@yixiangzhilv.com](mailto:mail@yixiangzhilv.com)
+See [yxzlwz](https://github.com/yxzlwz)
