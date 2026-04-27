@@ -1,6 +1,4 @@
-# MusicAPI
-
-**Update: NetEase Music is unavailable.**
+# MusicAPI - The Project is No Longer Available.
 
 This is a Pypi package which can get music's source url from [music.qq.com](https://music.qq.com/) or [music.163.com](https://music.163.com/) with name or id.
 
